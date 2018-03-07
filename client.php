@@ -93,6 +93,62 @@ function searchLocation($location){
     echo $argv[0]." END".PHP_EOL;
 }
 
+function searchInsurance($insurance,$location){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "insurance";
+    $request['location'] = $location;
+    $request['insurance']=$insurance;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
+
+function searchSpeciality($specialty,$location){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "location";
+    $request['location'] = $location;
+    $request['speciality'] = $speciality;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
+
 
 
 ?>
