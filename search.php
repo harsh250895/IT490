@@ -7,8 +7,9 @@ $uid = $_GET['uid'];
 //$uid = '333d4bb6fcf640e18e93b11b00fe09eb';
 $response = search($uid);
 
+$respo = rtrim($response);
 header('Content-Type: application/json;charset=utf-8');
 
 //echo json_decode($data);
-echo ($response);
+echo ($respo);
 ?>
