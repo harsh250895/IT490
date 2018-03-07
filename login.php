@@ -11,9 +11,10 @@ $response = login($user,$pass);
 if($response == false)
   {
     echo "Unthorized";
+    header( "Refresh:1; url=login.html", true, 303);
   }
   else
   {
-  echo "Authorized";
+  header( "Refresh:1; url=doctor.html", true, 303);
   }
 ?>

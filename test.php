@@ -58,11 +58,7 @@ td, th {
 <script id="doc-template" type="text/x-handlebars-template">
 <h3>BetterDoctor - {{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h3>
     <p class="address">
-        {{#data.practices}}
-        {{name}}<br>
-        {{visit_address.street}}<br>
-        {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}
-        {{/data.practices}}
+
     </p>
     <p class="bio">{{data.profile.dynamic_bio}}</p>
     <table>
@@ -82,6 +78,27 @@ td, th {
             {{/data.specialties}}
             </td>
         </tr>
+
+
+<tr>
+      {{#data.practices}}
+
+          <th>Practice</th>
+      <td>{{name}}<br></td>
+
+      <th>Address</th>
+      <td>{{visit_address.street}}<br>
+      {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}</td>
+
+      <th>Contact</th>
+      {{#phones}}
+
+      <td>{{number}}-{{type}}</td>
+      {{/phones}}
+    </tr>
+
+    {{/data.practices}}
+    </tbody>
     </table>
 </script>
 </body>
