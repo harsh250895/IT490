@@ -66,8 +66,8 @@ function register($email,$user,$pass){
     echo $argv[0]." END".PHP_EOL;
 }
 
-//function searchLocation($location){
-    $client = new rabbitMQClient("testRabbitMQ.ini","apiServer");
+function searchLocation($location){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
     if (isset($argv[1]))
     {
       $msg = $argv[1];
