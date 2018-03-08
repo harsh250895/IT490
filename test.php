@@ -8,6 +8,7 @@ error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT);
 if (!isset($_SESSION["user"])){
  header( "Refresh:1; url=login.html", true, 303);
  }
+
 $uid = $_GET['lic'];?>
 <!DOCTYPE html>
 <html>
@@ -74,7 +75,33 @@ td, th {
 }
   </style>
 </head>
-<body>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">DocRx</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Primary Doctor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Visited</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">To-be Visited</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="logout.php">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 <div id="content-placeholder"></div>
 <script id="doc-template" type="text/x-handlebars-template">
 <h3>BetterDoctor - {{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h3>
