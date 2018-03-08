@@ -149,6 +149,33 @@ function searchSpeciality($specialty,$location){
     echo $argv[0]." END".PHP_EOL;
 }
 
+function search($uid){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "doc";
+    $request['uid'] = $uid;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
+
 
 
 ?>
