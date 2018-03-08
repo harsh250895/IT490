@@ -84,7 +84,13 @@ td, th {
   padding-right: 20px;
 }
 
-
+form{
+  display:block;
+  padding-top: 5%;
+}
+#mainNav {
+    background-color: #f05f40;
+}
 
   </style>
 </head>
