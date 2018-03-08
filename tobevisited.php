@@ -9,14 +9,15 @@ include ('client.php');
 if (!isset($_SESSION["user"])){
  header( "Refresh:1; url=login.html", true, 303);
  }
-
- if($_GET['type'] == "add"){
+$type = $_GET['type'];
+echo $type;
+ if($type == "add"){
 $name = $_GET['name'];
 $uid = $_GET['uid'];
 $date = $_GET['date'];
 
 $response = addAP($uid,$_SESSION['user'],$name,$date);
-echo $response
+echo $response;
 }
 else{
 

@@ -176,6 +176,61 @@ function search($uid){
     echo $argv[0]." END".PHP_EOL;
 }
 
+function addAP($uid,$user,$name,$date){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "addap";
+    $request['uid'] = $uid;
+    $request['name'] = $name;
+    $request['date'] = $date;
+    $request['user'] = $user;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
+function getList($user){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "getlist";
+    $request['user'] = $user;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
 
 
 ?>

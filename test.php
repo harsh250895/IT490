@@ -47,7 +47,7 @@ if (!isset($_SESSION["user"])){
   var d = document.getElementById('date');
   var date = d.value;
 
-  var url='http://localhost/tobevisited.php?name='+name + '&uid=' + uid + '&date=' + date + '$type=add';
+  var url='http://localhost/tobevisited.php?name='+name + '&uid=' + uid + '&date=' + date + '&type=add';
 
 
 window.open(url);
