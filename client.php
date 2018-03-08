@@ -121,7 +121,7 @@ function searchInsurance($insurance,$location){
     echo $argv[0]." END".PHP_EOL;
 }
 
-function searchSpeciality($specialty,$location){
+function searchSpeciality($speciality,$location){
     $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
     if (isset($argv[1]))
     {
