@@ -135,7 +135,7 @@ function searchSpeciality($specialty,$location){
 
 
     $request = array();
-    $request['type'] = "location";
+    $request['type'] = "speciality";
     $request['location'] = $location;
     $request['speciality'] = $speciality;
     $response = $client->send_request($request);
@@ -163,7 +163,7 @@ function search($uid){
 
 
     $request = array();
-    $request['type'] = "doc";
+    $request['type'] = "uid";
     $request['uid'] = $uid;
     $response = $client->send_request($request);
     //$response = $client->publish($request);
