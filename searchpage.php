@@ -81,7 +81,7 @@
             <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
             <a class="btn btn-light btn-xl js-scroll-trigger" href="doctor.html">Location</a>
             <a class="btn btn-light btn-xl js-scroll-trigger" href="insuranceSearch.html">Insurance</a>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="specialitySearch.html">Speciality</a>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="specialtySearch.html">Speciality</a>
           </div>
         </div>
       </div>
