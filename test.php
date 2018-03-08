@@ -43,15 +43,13 @@ if (!isset($_SESSION["user"])){
 
   function f(){
   var name = "<?php $name = $_GET['name']; echo $name;?>";
-  var user = "<?php echo $_SESSION['user'];?>";
+
   var d = document.getElementById('date');
   var date = d.value;
 
-  var url='http://localhost/tobevisited.php?name='+name + '&user='+ user + '&uid=' + uid + '&date=' + date;
+  var url='http://localhost/tobevisited.php?name='+name + '&uid=' + uid + '&date=' + date + '$type=add';
 
-  alert(name);
-  alert(user);
-  alert(url);
+
 window.open(url);
 
 
