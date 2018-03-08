@@ -110,10 +110,10 @@ form{
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Primary Doctor</a>
+            <a class="nav-link js-scroll-trigger" href="primary.php">Primary Doctor</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Visited</a>
+            <a class="nav-link js-scroll-trigger" href="visited.php">Visited</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="tobevisited.php">To-be Visited</a>
