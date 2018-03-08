@@ -1,4 +1,13 @@
-<?php ?>
+<?php
+session_start();
+ini_set("display_errors", 1);
+ini_set("log_errors",1);
+ini_set("error_log", "/tmp/error.log");
+error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT);
+if (!isset($_SESSION["user"])){
+ header( "Refresh:1; url=login.html", true, 303);
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +41,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">DocRx</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -60,12 +69,12 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Your Favorite Source of Free Bootstrap Themes</strong>
+              <strong>Welcome</strong>
             </h1>
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+            <p class="text-faded mb-5"><?php echo($_SESSION["user"]); ?></p>
 
           </div>
         </div>
