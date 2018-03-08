@@ -17,6 +17,12 @@
           var template = Handlebars.compile(document.getElementById('doc-template').innerHTML);
           document.getElementById('content-placeholder').innerHTML = template(data);
   });
+
+  function visible(){
+
+    var v = document.getElementById("contact");
+    v.style.display="block";
+  }
   </script>
 
   <style>
@@ -50,6 +56,11 @@ td, th {
 .address {
     font-size: 0.8em;
     color: #888;
+}
+
+#contact{
+  display:none;
+
 }
   </style>
 </head>
@@ -90,11 +101,14 @@ td, th {
       <td>{{visit_address.street}}<br>
       {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}</td>
 
-      <th>Contact</th>
+
+      <th onclick="visible()">Contact</th>
+<div id="contact">
       {{#phones}}
 
       <td>{{number}}-{{type}}</td>
       {{/phones}}
+</div>
     </tr>
 
     {{/data.practices}}
