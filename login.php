@@ -15,6 +15,6 @@ if($response == false)
   }
   else
   {
-  header( "Refresh:1; url=doctor.html", true, 303);
+  header( "Refresh:1; url=searchpage.php", true, 303);
   }
 ?>
