@@ -116,7 +116,7 @@ form{
             <a class="nav-link js-scroll-trigger" href="#services">Visited</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">To-be Visited</a>
+            <a class="nav-link js-scroll-trigger" href="tobevisited.php">To-be Visited</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="logout.php">Logout</a>
