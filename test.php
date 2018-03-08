@@ -41,10 +41,20 @@ if (!isset($_SESSION["user"])){
           document.getElementById('content-placeholder').innerHTML = template(data);
   });
 
-  function visible(){
+  function f(){
+  var name = "<?php $name = $_GET['name']; echo $name;?>";
+  var user = "<?php echo $_SESSION['user'];?>";
+  var d = document.getElementById('date');
+  var date = d.value;
 
-    var v = document.getElementById("contact");
-    v.style.display="block";
+  var url='http://localhost/tobevisited.php?name='+name + '&user='+ user + '&uid=' + uid + '&date=' + date;
+
+  alert(name);
+  alert(user);
+  alert(url);
+window.open(url);
+
+
   }
   </script>
 
@@ -85,6 +95,18 @@ td, th {
   display:none;
 
 }
+form{
+  display:block;
+  padding-top: 5%;
+}
+#mainNav {
+    background-color: #f05f40;
+}
+
+#content-placeholder{
+
+  padding-top:5%;
+}
   </style>
 </head>
 <body id="page-top">
@@ -116,7 +138,8 @@ td, th {
   </nav>
 <div id="content-placeholder"></div>
 <script id="doc-template" type="text/x-handlebars-template">
-<h3>BetterDoctor - {{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h3>
+
+<h3 id="name">BetterDoctor - {{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h3>
     <p class="address">
 
     </p>
@@ -151,16 +174,20 @@ td, th {
       {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}</td>
 
 
-      <th onclick="visible()">Contact</th>
-<div id="contact">
+      <th>Contact</th>
       {{#phones}}
 
       <td>{{number}}-{{type}}</td>
       {{/phones}}
-</div>
-    </tr>
+
+</tr>
 
     {{/data.practices}}
+
+    <tr>
+      <td><input type=text placeholder="yyyy-dd-mm 00:00:00" id="date">Enter Date</td>
+      <td><input type=button value="Schedule" onclick="f()"></td>
+    </tr>
     </tbody>
     </table>
 </script>
