@@ -87,6 +87,13 @@ td, th {
   padding-right: 20px;
 }
 
+form{
+  display:block;
+  padding-top: 5%;
+}
+#mainNav {
+    background-color: #f05f40;
+}
 
 
   </style>
@@ -149,7 +156,7 @@ td, th {
         <tbody>
         {{#data}}
         <tr>
-            <td><a href="test.php?lic={{uid}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
+            <td><a href="test.php?lic={{uid}}&name={{profile.first_name}} {{profile.last_name}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
               <img src="{{ratings.0.image_url_small}}"></img></td>
             <td>{{profile.title}}</td>
             <td>{{uid}}</td>
