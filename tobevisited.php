@@ -10,7 +10,6 @@ if (!isset($_SESSION["user"])){
  header( "Refresh:1; url=login.html", true, 303);
  }
 $type = $_GET['type'];
-echo $type;
  if($type == "add"){
 $name = $_GET['name'];
 $uid = $_GET['uid'];
