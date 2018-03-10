@@ -1,6 +1,12 @@
 <?php
-error_reporting(-1);
-ini_set('display_errors', true);
+session_start();
+ini_set("display_errors", 1);
+ini_set("log_errors",1);
+ini_set("error_log", "/tmp/error.log");
+error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT);
+if (!isset($_SESSION["user"])){
+ header( "Refresh:1; url=login.html", true, 303);
+ }
 
 include ('client.php');
 $location = $_GET['loc'];
