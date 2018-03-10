@@ -47,7 +47,22 @@ if (!isset($_SESSION["user"])){
   var d = document.getElementById('date');
   var date = d.value;
 
+
   var url='http://localhost/tobevisited.php?name='+name + '&uid=' + uid + '&date=' + date + '&type=add';
+
+
+window.open(url);
+
+
+  }
+  function p(){
+  var name = "<?php $name = $_GET['name']; echo $name;?>";
+
+  var p = document.getElementById('p');
+  var pri = p.value;
+
+
+  var url='http://localhost/primarydoc.php?uid='+pri + '&type=add';
 
 
 window.open(url);
@@ -119,13 +134,13 @@ form{
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Primary Doctor</a>
+            <a class="nav-link js-scroll-trigger" href="primary.php">Primary Doctor</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Visited</a>
+            <a class="nav-link js-scroll-trigger" href="visited.php">Visited</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">To-be Visited</a>
+            <a class="nav-link js-scroll-trigger" href="tobevisited.php">To-be Visited</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="logout.php">Logout</a>
@@ -184,7 +199,8 @@ form{
 
     <tr>
       <td><input type=text placeholder="yyyy-dd-mm 00:00:00" id="date">Enter Date</td>
-      <td><input type=button value="Schedule" onclick="f()"></td>
+      <td><input type=button value="Schedule" id="b" onclick="f()"></td>
+      <td><input type=button value="{{uid}}" id="p" onclick="p()"></td>
     </tr>
     </tbody>
     </table>
