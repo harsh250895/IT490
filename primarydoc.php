@@ -20,7 +20,7 @@ $respo = rtrim($response);
 header('Content-Type: application/json;charset=utf-8');
 
 //echo json_decode($data);
-echo ($respo);}
+header( "Refresh:1; url=primary.php?uid?=$response", true, 303);}
 else{
   $response = getPri($_SESSION['user']);
 
@@ -28,7 +28,7 @@ else{
   header('Content-Type: application/json;charset=utf-8');
 
   //echo json_decode($data);
-  echo ($respo);
+  header( "Refresh:1; url=primary.php?uid?=$response", true, 303);
 
 }
 ?>
