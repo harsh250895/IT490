@@ -17,18 +17,18 @@ $uid = $_GET['uid'];
 $response = addPri($uid,$_SESSION['user']);
 
 $respo = rtrim($response);
-header('Content-Type: application/json;charset=utf-8');
+//header('Content-Type: application/json;charset=utf-8');
 
 //echo json_decode($data);
-header( "Refresh:1; url=primary.php?uid?=$response", true, 303);}
+header( "Refresh:1; url=testpri.php?lic=$response", true, 303);}
 else{
   $response = getPri($_SESSION['user']);
 
   $respo = rtrim($response);
-  header('Content-Type: application/json;charset=utf-8');
+  //header('Content-Type: application/json;charset=utf-8');
 
   //echo json_decode($data);
-  header( "Refresh:1; url=primary.php?uid?=$response", true, 303);
+  header( "Refresh:1; url=testpri.php?lic=$response", true, 303);
 
 }
 ?>

@@ -33,6 +33,7 @@ if (!isset($_SESSION["user"])){
   <script type="text/javascript" >
 
   var uid ="<?php $uid = $_GET['lic']; echo $uid;?>";
+alert(uid);
   var resource_url = 'search.php?uid='+ uid;
   $.get(resource_url, function(data) {
 
@@ -42,7 +43,8 @@ if (!isset($_SESSION["user"])){
   });
 
   function f(){
-  var name = "<?php $name = $_GET['name']; echo $name;?>";
+    var n = document.getElementById('name');
+  var name = n.value
 
   var d = document.getElementById('date');
   var date = d.value;
@@ -114,15 +116,12 @@ form{
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">DocRx</a>
+      <a class="navbar-brand js-scroll-trigger" href="searchpage.php">DocRx</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="primary.php">Primary Doctor</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="visited.php">Visited</a>
           </li>
@@ -138,8 +137,8 @@ form{
   </nav>
 <div id="content-placeholder"></div>
 <script id="doc-template" type="text/x-handlebars-template">
-
-<h3 id="name">Primary Doctor - {{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h3>
+<h3>Primary</h3>
+<h3 id="name">{{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h3>
     <p class="address">
 
     </p>

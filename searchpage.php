@@ -48,7 +48,7 @@ if (!isset($_SESSION["user"])){
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="primary.php">Primary</a>
+              <a class="nav-link js-scroll-trigger" href="primarydoc.php">Primary</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="visited.php">Visited</a>

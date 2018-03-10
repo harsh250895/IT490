@@ -200,7 +200,7 @@ form{
     <tr>
       <td><input type=text placeholder="yyyy-dd-mm 00:00:00" id="date">Enter Date</td>
       <td><input type=button value="Schedule" id="b" onclick="f()"></td>
-      <td><input type=button value="{{uid}}" id="p" onclick="p()"></td>
+      <td><a href="primarydoc.php?uid={{data.uid}}&type=add">Make Primary</td>
     </tr>
     </tbody>
     </table>
