@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-ini_set("display_errors", 1);
+ini_set("display_errors", 0);
 ini_set("log_errors",1);
 ini_set("error_log", "/tmp/error.log");
 error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT);
@@ -182,7 +182,12 @@ form{
 </tr>
 
     {{/data.practices}}
-
+<tr>
+  {{#data.insurances}}
+  <th>Insurance name<th>
+    <td>{{insurance_plan.name}}
+</tr>
+  {{/data.insurances}}
     <tr>
       <td><input type=text placeholder="yyyy-dd-mm 00:00:00" id="date">Enter Date</td>
       <td><input type=button value="Schedule" id="b" onclick="f()"></td>

@@ -8,7 +8,6 @@ if (!isset($_SESSION["user"])){
  header( "Refresh:1; url=login.html", true, 303);
  }
 
-
 include ('client.php');
 $speciality = $_GET['speciality'];
 $location = $_GET['location'];

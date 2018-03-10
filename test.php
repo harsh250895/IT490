@@ -196,6 +196,12 @@ form{
 
     {{/data.practices}}
 
+<tr>
+  {{#data.insurances}}
+  <th>Insurance name<th>
+    <td>{{insurance_plan.name}}
+</tr>
+  {{/data.insurances}}
     <tr>
       <td><input type=text placeholder="yyyy-dd-mm 00:00:00" id="date">Enter Date</td>
       <td><input type=button value="Schedule" id="b" onclick="f()"></td>
