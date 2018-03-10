@@ -232,5 +232,114 @@ function getList($user){
     echo $argv[0]." END".PHP_EOL;
 }
 
+function rmAP($uid,$user){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "rmap";
+    $request['user'] = $user;
+    $request['uid'] = $uid;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
+
+function newList($user){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "nlist";
+    $request['user'] = $user;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
+
+function addPri($uid,$user){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "addpri";
+    $request['uid'] = $uid;
+    $request['user'] = $user;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
+function getPri($user){
+    $client = new rabbitMQClient("testRabbitMQ.ini","DBServer");
+    if (isset($argv[1]))
+    {
+      $msg = $argv[1];
+    }
+    else
+    {
+      $msg = "test message";
+    }
+
+
+
+    $request = array();
+    $request['type'] = "plist";
+    $request['user'] = $user;
+    $response = $client->send_request($request);
+    //$response = $client->publish($request);
+
+    //echo "client received response: ".PHP_EOL;
+    //print_r($response);
+    return $response;
+    echo "\n\n";
+
+    echo $argv[0]." END".PHP_EOL;
+}
+
 
 ?>
