@@ -156,7 +156,7 @@ form{
         <tbody>
         {{#data}}
         <tr>
-            <td><a href="test.php?lic={{uid}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
+            <td><a href="test.php?lic={{uid}}&name={{profile.first_name}} {{profile.last_name}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
               <img src="{{ratings.0.image_url_small}}"></img></td>
             <td>{{profile.title}}</td>
             <td>{{uid}}</td>
